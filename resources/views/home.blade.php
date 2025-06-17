@@ -16,7 +16,6 @@
 
                     {{ __('You are logged in!') }} 
                     <br><br>
-                    <a href="{{ route('chat.index') }}" class="btn btn-info">Go to Chat!</a>
                     <br>
                     @if(Auth::user()->role === 'admin')
                         <a href="{{ route('users.index') }}" class="btn btn-success mt-3">
