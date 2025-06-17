@@ -1,14 +1,14 @@
-# WeChat Project
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Laravel-11.x-red.svg" alt="Laravel Version">
-  <img src="https://img.shields.io/badge/PHP-8.0+-blue.svg" alt="PHP Version">
-  <img src="https://img.shields.io/badge/C-Windows_Sockets-00599C.svg" alt="C Language">
-  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
+# WeChat Project  
+  
+<p align="center">  
+  <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">  
+</p>  
+  
+<p align="center">  
+  <a href="https://laravel.com"><img src="https://badgen.net/badge/Laravel/11.x/FF2D20" alt="Laravel Version"></a>  
+  <a href="https://php.net"><img src="https://badgen.net/badge/PHP/8.0+/777BB4" alt="PHP Version"></a>  
+  <a href="#"><img src="https://badgen.net/badge/C/Windows%20Sockets/00599C" alt="C Language"></a>  
+  <a href="#"><img src="https://badgen.net/badge/License/MIT/green" alt="License"></a>  
 </p>
 
 ## 🚀 Overview
