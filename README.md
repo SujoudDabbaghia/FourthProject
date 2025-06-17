@@ -1,10 +1,14 @@
 # WeChat Project  
   
 <p align="center">  
-  <img src="https://github.com/nano9119/WeChat_Project/raw/main/.github/badges/laravel-11.x-red.svg" alt="Laravel Version">  
-  <img src="https://github.com/nano9119/WeChat_Project/raw/main/.github/badges/php-8.0+-blue.svg" alt="PHP Version">  
-  <img src="https://github.com/nano9119/WeChat_Project/raw/main/.github/badges/c-windows-sockets-00599C.svg" alt="C Language">  
-  <img src="https://github.com/nano9119/WeChat_Project/raw/main/.github/badges/license-MIT-green.svg" alt="License">  
+  <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">  
+</p>  
+  
+<p align="center">  
+  <img src="https://img.shields.io/static/v1?label=Laravel&message=11.x&color=FF2D20&style=flat-square&logo=laravel" alt="Laravel">  
+  <img src="https://img.shields.io/static/v1?label=PHP&message=8.0%2B&color=777BB4&style=flat-square&logo=php" alt="PHP">  
+  <img src="https://img.shields.io/static/v1?label=C&message=WinSock&color=00599C&style=flat-square&logo=c" alt="C Language">  
+  <img src="https://img.shields.io/static/v1?label=License&message=MIT&color=green&style=flat-square" alt="License">  
 </p>
 
 ## 🚀 Overview
