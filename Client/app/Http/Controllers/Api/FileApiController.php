@@ -41,33 +41,49 @@ class FileApiController extends Controller
         return new FileResource($file);
     }
 
-    public function update(Request $request, $id)
-    {
-        $request->validate([
-            'file' => 'required|file',
-            'old_file_path' => 'required|string',
-        ]);
+public function update(Request $request, $id)
+{
+    $request->validate([
+        'file' => 'required|file',
+        'old_file_path' => 'required|string',
+    ]);
 
-       // احصل على الملف الجديد
-        $file = $request->file('file');
+    // احصل على السجل من قاعدة البيانات
+    $fileRecord = File::findOrFail($id);
 
-        // احفظ الملف الجديد في مجلد 'uploads' أو حسب اختيارك
-        $newFilePath = $file->store('uploads');
+    // احصل على الملف الجديد
+    $file = $request->file('file');
+    $newFilePath = $file->store('uploads', 'public'); // storage/app/public/uploads
 
-        // احصل على مسار الملف القديم من الريكوست
-        $oldFilePath = $request->input('old_file_path');
-
-        // لو تريد تحذف الملف القديم (تأكد أنه موجود)
-        if ($oldFilePath && Storage::exists($oldFilePath)) {
-            Storage::delete($oldFilePath);
-        }
-
-        // ترجع نتيجة للعميل
-        return response()->json([
-            'message' => 'File updated successfully',
-            'new_file_path' => $newFilePath,
-        ]);
+    // حذف الملف القديم من التخزين إذا موجود
+    $oldFilePath = $request->input('old_file_path');
+    if ($oldFilePath && Storage::disk('public')->exists($oldFilePath)) {
+        Storage::disk('public')->delete($oldFilePath);
     }
+
+    // تحديث قاعدة البيانات
+    $fileRecord->file_path = $newFilePath;
+
+    // تحديد type تلقائيًا حسب امتداد الملف
+    $extension = strtolower($file->getClientOriginalExtension());
+    if (in_array($extension, ['jpg', 'jpeg', 'png', 'gif', 'webp'])) {
+        $fileRecord->type = 'image';
+    } elseif (in_array($extension, ['mp4', 'mov', 'avi', 'mkv'])) {
+        $fileRecord->type = 'video';
+    } elseif (in_array($extension, ['mp3', 'wav', 'ogg', 'm4a'])) {
+        $fileRecord->type = 'audio';
+    } else {
+        $fileRecord->type = 'audio'; // افتراضي إذا امتداد غير معروف
+    }
+
+    $fileRecord->save();
+
+    return response()->json([
+        'message' => 'File updated successfully',
+        'new_file_path' => $newFilePath,
+        'file_record' => $fileRecord,
+    ]);
+}
 
     public function destroy($id)
     {

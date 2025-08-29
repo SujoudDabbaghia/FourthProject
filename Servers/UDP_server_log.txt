@@ -1,0 +1,9 @@
+[2025-08-28 23:33:11] : UDP Server starting...
+[2025-08-28 23:33:11] : Winsock initialized successfully..
+[2025-08-28 23:33:11] : Server IP retreived
+[2025-08-28 23:33:11] : UDP Server started successfully.
+[2025-08-28 23:33:11] : Server IP address is being broadcasted every 3 seconds.
+[2025-08-28 23:33:35] : hello for admin
+[2025-08-28 23:33:35] : Message was broadcasted successfully.
+[2025-08-29 00:03:34] : Hello test
+[2025-08-29 00:03:34] : Message was broadcasted successfully.

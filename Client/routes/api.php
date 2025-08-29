@@ -32,6 +32,8 @@ use App\Http\Controllers\Api\MessageApiController;
 });
 
 // ✅ مسارات للمشرف فقط
-Route::middleware(['auth:sanctum', 'admin'])->group(function () {
-    Route::apiResource('users', UserApiController::class);
+    Route::middleware(['auth:sanctum'])->group(function () {
+    Route::put('users/{user}', [UserApiController::class, 'update'])->middleware('canUpdateUser');
+    Route::apiResource('users', UserApiController::class)->except(['update']);
 });
+
