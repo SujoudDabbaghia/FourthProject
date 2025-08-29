@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Resources\UserResource;
 use App\Http\Controllers\Controller;
+use App\Models\Message;
+use App\Models\File;
 
 class UserApiController extends Controller
 {
@@ -86,6 +88,14 @@ class UserApiController extends Controller
     }
 
     $user->update($validated);
+
+    // ✅ حدث الرسائل والملفات بعد تحديث المستخدم
+
+    Message::where('user_id', $user->id)
+        ->update(['user_name' => $user->name]);
+
+    File::where('user_id', $user->id)
+        ->update(['user_name' => $user->name]);
 
     return new UserResource($user);
 }
